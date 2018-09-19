@@ -9,4 +9,4 @@ so now we have node installed on our system!
 * type `node index.js` where index.js is the js file which will start a server on your system and will be using the port number '3000'.
 * now open up a browser and in the url bar type "localhost:3000"
 * i recommend to use it in maximized browser window 
-* you can connect multiple devices and use it as a chat app( by typing in url bar : <ipAddress>:3000)
+* you can connect multiple devices and use it as a chat app( by typing in url bar -  ipAddress:3000  eg:- 192.168.225.50:3000)
