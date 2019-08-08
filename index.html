@@ -1,48 +1,32 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>SSUP on server chat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./styles/style.css">
+    <title>SSUP | WebChat</title>
 </head>
-
 <body>
-
-    <div class="heading">S S U P<br> <i><sub>On server chat app by - @anik_dvd (under development)</sub></i></div>
-
-    <div class="container">
-        <div class="chat">
-            <ul id="messages">
-
-            </ul>
+    <nav>
+        SSUP! WebChat
+    </nav>
+    <main>
+        <div class="container">
+            <div class="chat">
+                <ul id="messages">
+    
+                </ul>
+            </div>
         </div>
-
-    </div>
-
-    <div class="foot">
-        <input class="customfld" size="45" type="text" id="message" />
-        <input class="custombtn" type="button" onclick="send()" value="&rarr;" />
-    </div>
-
-    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-    <script>
-        var socket = io();
-
-        function send() {
-            var message = document.getElementById("message").value;
-            socket.emit("send", {
-                "message": message
-            });
-            document.getElementById("message").value = "";
-        }
-
-        socket.on("new", function(data) {
-            console.log("NEW MESSAGE : ", data);
-            var chatMessage = document.createElement("li");
-            chatMessage.innerHTML = data.message;
-            document.getElementById("messages").appendChild(chatMessage)
-        });
-    </script>
+    </main>
+    <footer>
+        <div class="tools">
+            <input class="customfld" size="45" type="text" id="message" />
+            <input class="custombtn" type="button" onclick="send()" value="&rarr;" />
+        </div>
+    </footer>
 </body>
-
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="./send.js"></script>
 </html>
